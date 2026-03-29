@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{AB38B730-DD5B-491E-ADC3-060F8269A8F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gemu</RootNamespace>
+    <AssemblyName>GemuEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\2024\October\Baldi's Basics Plus v0.7.1\BBCCSLite\BBCCS Lite\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\2024\October\Baldi's Basics Plus v0.7.1\BBCCSLite\BBCCS Lite\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="MTM101BaldAPI">
+      <HintPath>..\..\..\..\2024\October\Baldi's Basics Plus v0.7.1\BBCCSLite\BBCCS Lite\BepInEx\plugins\MTM101BaldAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\2024\December\release_19a50\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\2024\September\spongebobs_basics_remastered_beta\Spongebob's_Basics_V1.0_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Affector.cs" />
+    <Compile Include="Animation\GAnimation_Looped.cs" />
+    <Compile Include="Animation\GAnimation_Standard.cs" />
+    <Compile Include="Animation\GemuAnimator.cs" />
+    <Compile Include="Animation\NPCAnimation_Base.cs" />
+    <Compile Include="APIActions.cs" />
+    <Compile Include="ApiPatches.cs" />
+    <Compile Include="CustomNPC.cs" />
+    <Compile Include="DebugMenu.cs" />
+    <Compile Include="DebugPatch.cs" />
+    <Compile Include="GemuExtensions.cs" />
+    <Compile Include="ItemFunctions.cs" />
+    <Compile Include="JSON\JsonAudio.cs" />
+    <Compile Include="JSON\JsonCell.cs" />
+    <Compile Include="JSON\JsonEntity.cs" />
+    <Compile Include="JSON\JsonGenerationData.cs" />
+    <Compile Include="JSON\JsonItem.cs" />
+    <Compile Include="JSON\JsonItemObject.cs" />
+    <Compile Include="JSON\JsonItemTable.cs" />
+    <Compile Include="JSON\JsonLevelContents.cs" />
+    <Compile Include="JSON\JsonLevelData.cs" />
+    <Compile Include="JSON\JsonNPC.cs" />
+    <Compile Include="JSON\JsonObjectData.cs" />
+    <Compile Include="JSON\JsonObjectsDatas.cs" />
+    <Compile Include="JSON\JsonPosterData.cs" />
+    <Compile Include="JSON\JsonPosterFile.cs" />
+    <Compile Include="JSON\JsonRoomMetadata.cs" />
+    <Compile Include="JSON\JsonSprite.cs" />
+    <Compile Include="JSON\JsonTileData.cs" />
+    <Compile Include="JSON\JsonVector.cs" />
+    <Compile Include="JSON\JsonVector3.cs" />
+    <Compile Include="JSON\JsonWeight.cs" />
+    <Compile Include="LevelFunctions.cs" />
+    <Compile Include="ModContents.cs" />
+    <Compile Include="NoConsumptions.cs" />
+    <Compile Include="NPCHotSpot.cs" />
+    <Compile Include="ObjectFunctions.cs" />
+    <Compile Include="PatchWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomTools\RoomObjects.cs" />
+    <Compile Include="RoomTools\RoomParser.cs" />
+    <Compile Include="SoundBank.cs" />
+    <Compile Include="SoundBanks.cs" />
+    <Compile Include="SoundMetadata.cs" />
+    <Compile Include="SpriteBank.cs" />
+    <Compile Include="SpriteBanks.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
